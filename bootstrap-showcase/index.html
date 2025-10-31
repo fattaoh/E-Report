@@ -49,11 +49,85 @@
      </nav>
 
     <!-- Hero Section -->
-     <main class="container py-5 text-center">
-      <h1 class="mb-3 fw-bold">Selamat Datang Di E-Report</h1>
-      <p class="lead text-muted">Laporan Fasilitas</p>
-      <a href="" class="btn btn-primary">+ Tambah Laporan</a>
-     </main>
+    <main class="container py-5">
+
+
+  <h1 class="mb-4 fw-bold text-center">Dashboard E-Report</h1>
+
+
+  <div class="row text-center" id="dashboard-stats">
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 id="totalReports">0</h3>
+          <p>Total Laporan</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 id="newReports">0</h3>
+          <p>Status: Baru</p>
+
+          </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 id="processReports">0</h3>
+          <p>Status: Diproses</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 id="doneReports">0</h3>
+          <p>Status: Selesai</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="text-center mt-4">
+    <a href="add-report.html" class="btn btn-primary">+ Tambah Laporan Baru</a>
+    <a href="reports.html" class="btn btn-outline-secondary">Lihat Semua Laporan</a>
+  </div>
+
+
+</main>
+
+
+<script>
+  function updateDashboard() {
+    const reports = JSON.parse(localStorage.getItem('reports')) || [];
+
+
+    const total = reports.length;
+    const baru = reports.filter(r => r.status === "Baru").length;
+    const proses = reports.filter(r => r.status === "Diproses").length;
+    const selesai = reports.filter(r => r.status === "Selesai").length;
+
+
+    document.getElementById('totalReports').innerText = total;
+    document.getElementById('newReports').innerText = baru;
+ document.getElementById('processReports').innerText = proses;
+    document.getElementById('doneReports').innerText = selesai;
+  }
+
+
+  updateDashboard();
+</script>
+
 
     <!-- About Section -->
 
