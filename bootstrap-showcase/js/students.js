@@ -34,4 +34,4 @@ document.getElementById('report-form').addEventListener('submit', async function
         reader.readAsDataURL(file);
         reader.onload = () => resolve(reader.result);
         reader.onerror = reject;
-      });
+      });}
