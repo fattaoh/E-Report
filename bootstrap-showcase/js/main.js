@@ -1,3 +1,9 @@
+const searchInput = document.getElementById(`searchInput`);
+const filter = document.getElementById(`filterInput`);
+const applyFilter = document.getElementById(`applyFilter`);
+const clearBtn = document.getElementById(`clearBtn`);
+
+
 const container = document.getElementById('report-list');
 const reports = JSON.parse(localStorage.getItem('reports')) || [];
 
