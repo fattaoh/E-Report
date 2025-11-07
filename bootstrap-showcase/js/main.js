@@ -1,10 +1,10 @@
 const searchInput = document.getElementById(`searchInput`);
 const filter = document.getElementById(`filterInput`);
-const applyFilter = document.getElementById(`applyFilter`);
+const applyFilterBtn = document.getElementById(`applyFilter`);
 const clearBtn = document.getElementById(`clearBtn`);
 
 
-const container = document.getElementById('report-list');
+const container = document.getElementById('reportList');
 let reports = JSON.parse(localStorage.getItem('reports')) || [];
 
 function loadReports() {
@@ -81,11 +81,11 @@ function deleteReport(id) {
 
   alert(`Laporan berhasil dihapus!`);
   loadReports();
-  
+
 }
 
 
-renderReports();
+loadReports();
 
 
 
