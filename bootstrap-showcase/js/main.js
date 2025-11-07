@@ -1,7 +1,7 @@
 const searchInput = document.getElementById(`searchInput`);
-const filter = document.getElementById(`filterInput`);
+const filterStatus = document.getElementById(`filterInput`);
 const applyFilterBtn = document.getElementById(`applyFilter`);
-const clearBtn = document.getElementById(`clearBtn`);
+const clearBtn = document.getElementById(`clearFilter`);
 
 
 const container = document.getElementById('reportList');
@@ -9,7 +9,7 @@ let reports = JSON.parse(localStorage.getItem('reports')) || [];
 
 function loadReports() {
     const reports = JSON.parse(localStorage.getItem('reports')) || [];
-    renderCards(reports);
+    renderReports(reports);
   }
 
 
@@ -58,7 +58,7 @@ function applyFilter() {
     `Filter diterapkan: ${filtered.length} laporan ditemukan`;
 
 
-  renderCards(filtered);
+  renderReports(filtered);
 }
 
 applyFilterBtn.addEventListener("click", applyFilter);
