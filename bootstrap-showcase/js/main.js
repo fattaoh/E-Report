@@ -5,7 +5,12 @@ const clearBtn = document.getElementById(`clearBtn`);
 
 
 const container = document.getElementById('report-list');
-const reports = JSON.parse(localStorage.getItem('reports')) || [];
+let reports = JSON.parse(localStorage.getItem('reports')) || [];
+
+function loadReports() {
+    const reports = JSON.parse(localStorage.getItem('reports')) || [];
+    renderCards(reports);
+  }
 
 
 function renderReports() {
