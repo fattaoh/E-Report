@@ -61,18 +61,27 @@ function applyFilter() {
   renderCards(filtered);
 }
 
+applyFilterBtn.addEventListener("click", applyFilter);
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    filterStatus.value = '';
+    loadReports();
+  });
+
+
 
 
 function deleteReport(id) {
-  const confirmDelete = confirm('Yakin ingin menghapus laporan ini?');
-  if (confirmDelete) {
-    const index = reports.findIndex(r => r.id === id);
-    if (index !== -1) {
-      reports.splice(index, 1);
- localStorage.setItem('reports', JSON.stringify(reports));
-      renderReports();
-    }
-  }
+ if (!confirm("Yakin ingin menghapus laporan ini?")) return;
+
+
+ reports = reports.filter(report => report.id !== id);
+  localStorage.setItem('reports', JSON.stringify(reports));
+
+  alert(`Laporan berhasil dihapus!`);
+  loadReports();
+  
 }
 
 

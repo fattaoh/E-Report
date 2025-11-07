@@ -47,8 +47,32 @@
 
     <main class="container my-4">
     <h2 class="mb-3">Daftar Laporan Fasilitas</h2>
-    <div id="report-list" class="row gy-3"></div>
+    <div class="row mb-3">
+  <div class="col-md-5">
+    <input type="text" id="searchInput" class="form-control" placeholder="Cari laporan...">
+  </div>
+  <div class="col-md-4">
+    <select id="filterStatus" class="form-select">
+      <option value="">Semua Status</option>
+      <option value="Baru">Baru</option>
+      <option value="Diproses">Diproses</option>
+      <option value="Selesai">Selesai</option>
+    </select>
+  </div>
+  <div class="col-md-3 d-flex gap-2">
+    <button class="btn btn-primary w-100" id="applyFilter">Apply</button>
+    <button class="btn btn-secondary w-100" id="clearFilter">Reset</button>
+  </div>
+</div>
+
+
+    <div id="reportList" class="row gy-3"></div>
+    <p id="filterStatusInfo" class="text-muted"></p>
+
+
   </main>
+
+
 
 
   <script src="js/reports.js"></script>
