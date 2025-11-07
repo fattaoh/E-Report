@@ -13,7 +13,7 @@ function loadReports() {
   }
 
 
-function renderReports() {
+function renderReports(reports) {
   container.innerHTML = '';
   if (reports.length === 0) {
     container.innerHTML = '<p class="text-muted">Belum ada laporan.</p>';
@@ -42,6 +42,25 @@ function renderReports() {
   `;
 });
 }
+
+function applyFilter() {
+  const searchValue = searchInput.value.toLowerCase();
+  const filterValue = filterStatus.value;
+
+
+  const filtered = reports.filter(r =>
+    (r.name.toLowerCase().includes(searchValue)) &&
+    (filterValue === "" || r.status === filterValue)
+  );
+
+
+  document.getElementById("filterStatusInfo").innerText =
+    `Filter diterapkan: ${filtered.length} laporan ditemukan`;
+
+
+  renderCards(filtered);
+}
+
 
 
 function deleteReport(id) {
