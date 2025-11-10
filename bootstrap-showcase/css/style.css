@@ -11,6 +11,10 @@
   --nav-bg: linear-gradient(90deg, var(--primary), var(--primary-dark));
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg);
