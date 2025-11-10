@@ -18,20 +18,20 @@ body {
 }
 
 /* === NAVBAR === */
-.navbar {
+/* .navbar {
   background: var(--nav-bg);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .navbar-brand {
   font-weight: 700;
   font-size: 1.4rem;
-  color: #fff !important;
+  color: #1132c9 !important;
 }
 
 .navbar-nav .nav-link {
-  color: #e2e6ea !important;
+  color: #110eaa !important;
   font-weight: 500;
   transition: 0.3s;
 }
@@ -105,6 +105,43 @@ form input:focus, form textarea:focus, form select:focus {
 .table-hover tbody tr:hover {
   background-color: #eef3ff;
 }
+
+/* Hero Section */
+section.bg-primary {
+  background: linear-gradient(135deg, #0d6efd, #3b8ef3);
+  overflow: hidden;
+}
+
+section.bg-primary img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+section.bg-primary img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Report Page Style ===== */
+#reportList .card {
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+}
+
+#reportList .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 0.5em 0.75em;
+  border-radius: 0.5rem;
+}
+
+footer {
+  background: linear-gradient(135deg, #0d6efd, #3b8ef3);
+}
+
 
 /* === FOOTER === */
 footer {
