@@ -26,7 +26,7 @@ document.getElementById('report-form').addEventListener('submit', async function
       reports.push(report);
       localStorage.setItem('reports', JSON.stringify(reports));
       alert('Laporan berhasil disimpan!');
-      window.location.href = 'reports.html';
+      window.location.href = 'report.html';
     });
  function toBase64(file) {
       return new Promise((resolve, reject) => {
