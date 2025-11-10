@@ -8,7 +8,7 @@ const container = document.getElementById('reportList');
 let reports = JSON.parse(localStorage.getItem('reports')) || [];
 
 function loadReports() {
-    const reports = JSON.parse(localStorage.getItem('reports')) || [];
+    reports = JSON.parse(localStorage.getItem('reports')) || [];
     renderReports(reports);
   }
 
