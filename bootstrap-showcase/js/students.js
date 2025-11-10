@@ -21,14 +21,13 @@ document.getElementById('report-form').addEventListener('submit', async function
         date: new Date().toLocaleDateString()
       };
 
-
       const reports = JSON.parse(localStorage.getItem('reports')) || [];
       reports.push(report);
       localStorage.setItem('reports', JSON.stringify(reports));
       alert('Laporan berhasil disimpan!');
       window.location.href = 'report.html';
     });
-    
+
  function toBase64(file) {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
