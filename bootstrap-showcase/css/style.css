@@ -1,111 +1,161 @@
-/* === Base === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #0d6efd;
+  --primary-dark: #0056b3;
+  --success: #00b37d;
+  --text: #333;
+  --bg: #f8fbff;
+  --card-bg: #fff;
+  --nav-bg: linear-gradient(90deg, var(--primary), var(--primary-dark));
+}
+
 body {
-  background-color: #f8f9fa;
   font-family: 'Poppins', sans-serif;
-  color: #212529;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
 }
 
-/* === Navbar === */
+/* === NAVBAR === */
 .navbar {
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-brand img {
-  border-radius: 10px;
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #fff !important;
 }
 
-.navbar-brand span {
-  font-size: 1.2rem;
-  letter-spacing: 0.5px;
+.navbar-nav .nav-link {
+  color: #e2e6ea !important;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.nav-link {
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.nav-link:hover {
-  color: #0d6efd !important;
+.navbar-nav .nav-link:hover {
+  color: #fff !important;
   transform: translateY(-2px);
 }
 
-/* === Headings === */
-h1, h2 {
-  font-weight: 700;
-  color: #0d6efd;
-  letter-spacing: 0.5px;
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  border: none;
+  transition: all 0.3s;
 }
 
-/* === Cards === */
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(13, 110, 253, 0.4);
+}
+
+.btn-success {
+  background: linear-gradient(90deg, var(--success), #198754);
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-success:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 179, 125, 0.4);
+}
+
+/* === CARD === */
 .card {
   border: none;
-  border-radius: 15px;
-  background: #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  border-radius: 18px;
+  background: var(--card-bg);
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.08);
+  transition: all 0.3s;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
 }
 
-.card-body h3 {
-  font-size: 2rem;
-  color: #0d6efd;
-}
-
-.card-body p {
-  color: #6c757d;
-}
-
-/* === Buttons === */
-.btn {
-  border-radius: 10px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  background-color: #0b5ed7;
-}
-
-.btn-outline-secondary:hover {
-  background-color: #6c757d;
-  color: #fff;
-}
-
-/* === Forms === */
-form label {
-  font-weight: 500;
-}
-
+/* === FORM === */
 form input, form textarea, form select {
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 1px solid #ced4da;
+  transition: 0.3s;
 }
 
-/* === Footer === */
+form input:focus, form textarea:focus, form select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.3);
+}
+
+/* === TABLE === */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.table th {
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #eef3ff;
+}
+
+/* === FOOTER === */
 footer {
-  margin-top: 60px;
-  background: #e9ecef;
-  padding: 20px 0;
   text-align: center;
-  color: #6c757d;
+  padding: 24px 0;
+  margin-top: 60px;
   font-size: 0.9rem;
+  background: #f1f3f6;
+  color: #6c757d;
 }
 
-/* === Animations === */
-[data-aos] {
-  transition-duration: 600ms;
+/* === ANIMATION === */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.7s ease forwards;
 }
 
-/* === Responsive === */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === DARK MODE === */
+body.dark {
+  --bg: #1a1d23;
+  --text: #e2e6ea;
+  --card-bg: #232831;
+  --nav-bg: linear-gradient(90deg, #232831, #1a1d23);
+  background: var(--bg);
+  color: var(--text);
+}
+
+body.dark .card {
+  background: #2d333d;
+  color: #e2e6ea;
+}
+
+body.dark footer {
+  background: #232831;
+  color: #adb5bd;
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   h1 {
     font-size: 1.8rem;
   }
-  .navbar-brand span {
-    font-size: 1rem;
+  .navbar-brand {
+    font-size: 1.2rem;
   }
 }
