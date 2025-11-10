@@ -1,5 +1,5 @@
 const searchInput = document.getElementById(`searchInput`);
-const filterStatus = document.getElementById(`filterInput`);
+const filterStatus = document.getElementById(`filterStatus`);
 const applyFilterBtn = document.getElementById(`applyFilter`);
 const clearBtn = document.getElementById(`clearFilter`);
 
