@@ -17,7 +17,11 @@
 
 
   <main class="container py-4">
-    <h2 class="mb-4">Edit Laporan</h2>
+    <div class="text-center mb-4">
+  <h2 class="fw-bold text-primary">Edit Laporan Fasilitas</h2>
+  <p class="text-muted">Perbarui data laporan yang telah dibuat sebelumnya.</p>
+</div>
+
 
 
     <form id="edit-form">
@@ -43,8 +47,11 @@
       </div>
 
 
-      <button type="submit" class="btn btn-success">Simpan Perubahan</button>
-      <a href="report.html" class="btn btn-secondary">Batal</a>
+      <div class="d-flex gap-3 mt-4">
+  <button type="submit" class="btn btn-success flex-fill">💾 Simpan Perubahan</button>
+  <a href="report.html" class="btn btn-outline-secondary flex-fill">↩ Batal</a>
+</div>
+
     </form>
   </main>
 
@@ -82,6 +89,20 @@
       alert('Perubahan berhasil disimpan!');
       window.location.href = 'report-detail.html?id=' + report.id;
     });
+
+    document.getElementById('imageInput').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = document.getElementById('previewImage');
+      img.src = reader.result;
+      img.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
     </script>
 </body>
 </html>
